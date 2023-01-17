@@ -10,8 +10,8 @@ namespace SQLiteDemo.Services
     public interface InterfaceBDD
     {
         Task<List<BorgarDO>> GetBorgarListDO();
-        Task<int> AddBorgarDO(BorgarDO studentModel);
-        Task<int> DeleteBorgarDO(BorgarDO studentModel);
-        Task<int> UpdateBorgarDO(BorgarDO studentModel);
+        Task<int> AddBorgarDO(BorgarDO borgarModel);
+        Task<int> DeleteBorgarDO(BorgarDO borgarModel);
+        Task<int> UpdateBorgarDO(BorgarDO borgarModel);
     }
 }

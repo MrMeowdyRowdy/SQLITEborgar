@@ -6,7 +6,7 @@
              xmlns:viewModels="clr-namespace:SQLiteDemo.ViewModels"
              x:DataType="viewModels:BorgarListODModel"
              x:Class="SQLiteDemo.Views.StudentListPage"
-             Title="Student List">
+             Title="Lista de Hamburguesas">
     
     <StackLayout Margin="10" VerticalOptions="StartAndExpand">
         <Label  Text="Lista de Hamburguesas" FontSize="28"/>
