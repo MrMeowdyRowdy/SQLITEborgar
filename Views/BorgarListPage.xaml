@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:SQLiteDemo.Models"
+             xmlns:searchHandlers="clr-namespace:SQLiteDemo.SearchHandlers"
+             xmlns:viewModels="clr-namespace:SQLiteDemo.ViewModels"
+             x:DataType="viewModels:BorgarListODModel"
+             x:Class="SQLiteDemo.Views.StudentListPage"
+             Title="Student List">
+    
+    <StackLayout Margin="10" VerticalOptions="StartAndExpand">
+        <Label  Text="Lista de Hamburguesas" FontSize="28"/>
+        <Button Text="Añadir Hamburguesa" Command="{Binding AddUpdateBorgarCommand}" HorizontalOptions="EndAndExpand" />
+        <CollectionView ItemsSource="{Binding BorgarsDO}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:BorgarDO">
+                    <Frame Margin="10" Padding="10">
+                        <StackLayout >
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding NombreOD}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding DescripcionOD}" FontSize="18" FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+                            <Label Text="{Binding ConQueso}" />
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:BorgarListODModel}},Path=MostrarAccionCommand}"
+                                                  CommandParameter="{Binding .}" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                   
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
