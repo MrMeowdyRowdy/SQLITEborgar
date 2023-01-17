@@ -37,8 +37,8 @@ namespace SQLiteDemo.Services
         public async Task<List<BorgarDO>> GetBorgarListDO()
         {
             await ReadySteadyGO();
-            var studentList = await conn.Table<BorgarDO>().ToListAsync();
-            return studentList;
+            var borgarList = await conn.Table<BorgarDO>().ToListAsync();
+            return borgarList;
         }
 
         public async Task<int> UpdateBorgarDO(BorgarDO borgarDO)
