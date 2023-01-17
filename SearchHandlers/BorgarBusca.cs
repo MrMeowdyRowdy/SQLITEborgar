@@ -9,20 +9,20 @@ namespace SQLiteDemo.SearchHandlers
 {
     public class BorgarBusca : SearchHandler
     {
-        public IList<BorgarDO> Students { get; set; }
+        public IList<BorgarDO> Borgars { get; set; }
         public string NavigationRoute { get; set; }
         public Type NavigationType { get; set; }
-        protected override void OnQueryChanged(string oldValue, string newValue)
+        protected override void OnQueryChanged(string valorViejo, string valorNuevo)
         {
-            base.OnQueryChanged(oldValue, newValue);
+            base.OnQueryChanged(valorViejo, valorNuevo);
 
-            if (string.IsNullOrWhiteSpace(newValue))
+            if (string.IsNullOrWhiteSpace(valorNuevo))
             {
                 ItemsSource = null;
             }
             else
             {
-                ItemsSource = Students.Where(student => student.BorgarplusDesc.ToLower().Contains(newValue.ToLower())).ToList();
+                ItemsSource = Borgars.Where(borgarrrr => borgarrrr.BorgarplusDesc.ToLower().Contains(valorNuevo.ToLower())).ToList();
             }
         }
 
