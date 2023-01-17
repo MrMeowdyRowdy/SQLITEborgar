@@ -22,7 +22,7 @@ public static class MauiProgram
 
 
         //Views Registration
-        builder.Services.AddSingleton<StudentListPage>();
+        builder.Services.AddSingleton<BorgarListPage>();
         builder.Services.AddTransient<AddUpdateBorgarDetail>();
 
 
