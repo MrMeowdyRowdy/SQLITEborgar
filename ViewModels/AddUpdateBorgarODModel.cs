@@ -16,10 +16,10 @@ namespace SQLiteDemo.ViewModels
         [ObservableProperty]
         private BorgarDO _BorgarDetail = new BorgarDO();
 
-        private readonly InterfaceBDD _studentService;
-        public AddUpdateBorgarODModel(InterfaceBDD studentService)
+        private readonly InterfaceBDD borgarService;
+        public AddUpdateBorgarODModel(InterfaceBDD borgarService)
         {
-            _studentService = studentService;
+            this.borgarService = borgarService;
         }
 
         [ICommand]
@@ -28,11 +28,11 @@ namespace SQLiteDemo.ViewModels
             int response = -1;
             if (BorgarDetail.ODBorgarID > 0)
             {
-                response = await _studentService.UpdateBorgarDO(BorgarDetail);
+                response = await borgarService.UpdateBorgarDO(BorgarDetail);
             }
             else
             {
-                response = await _studentService.AddBorgarDO(new Models.BorgarDO
+                response = await borgarService.AddBorgarDO(new Models.BorgarDO
                 {
                     ConQueso = BorgarDetail.ConQueso,
                     NombreOD = BorgarDetail.NombreOD,
@@ -40,11 +40,8 @@ namespace SQLiteDemo.ViewModels
                 });
             }
 
-        
-
             if (response > 0)
             {
-
                 await Shell.Current.DisplayAlert("Hamburguesa Guardada", "Registro guardado exitosamente", "OK");
                 await Shell.Current.GoToAsync("..");
             }
@@ -54,6 +51,5 @@ namespace SQLiteDemo.ViewModels
                 await Shell.Current.GoToAsync("..");
             }
         }
-
     }
 }
