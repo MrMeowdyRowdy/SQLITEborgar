@@ -14,6 +14,7 @@ namespace SQLiteDemo.Models
         public string NombreOD { get; set; }
         public string DescripcionOD { get; set; }
         public string ConQueso { get; set; }
+        public DateTime Fecha { get; set; }
         [Ignore]
         public string BorgarplusDesc => $"{NombreOD}: {DescripcionOD}";
     }

@@ -37,6 +37,7 @@ namespace SQLiteDemo.ViewModels
                     ConQueso = BorgarDetail.ConQueso,
                     NombreOD = BorgarDetail.NombreOD,
                     DescripcionOD = BorgarDetail.DescripcionOD,
+                    Fecha = BorgarDetail.Fecha,
                 });
             }
 
