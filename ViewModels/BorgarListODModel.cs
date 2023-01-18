@@ -23,8 +23,6 @@ namespace SQLiteDemo.ViewModels
             _borgarServiceDO = borgarservice;
         }
 
-
-
         [ICommand]
         public async void GetBorgarListDO()
         {
@@ -53,8 +51,8 @@ namespace SQLiteDemo.ViewModels
         [ICommand]
         public async void MostrarAccion(BorgarDO borgarmodel)
         {
-            var response = await AppShell.Current.DisplayActionSheet("Select Option", "OK", null, "Edit", "Delete");
-            if (response == "Edit")
+            var response = await AppShell.Current.DisplayActionSheet("Seleccione Opcion", "OK", null, "Editar", "Borrar");
+            if (response == "Editar")
             {
                 var navParam = new Dictionary<string, object>
                 {
@@ -62,7 +60,7 @@ namespace SQLiteDemo.ViewModels
                 };
                 await AppShell.Current.GoToAsync(nameof(AddUpdateBorgarDetail), navParam);
             }
-            else if (response == "Delete")
+            else if (response == "Borrar")
             {
                 var delResponse = await _borgarServiceDO.DeleteBorgarDO(borgarmodel);
                 if (delResponse > 0)

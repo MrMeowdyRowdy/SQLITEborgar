@@ -25,14 +25,12 @@
             <BoxView HeightRequest="0.8" Color="Gray" />
         </VerticalStackLayout>
 
-
         <VerticalStackLayout>
             <Label Text="Con Queso?" />
             <Entry Text="{Binding BorgarDetail.ConQueso}" Placeholder="Si/No" />
             <BoxView HeightRequest="0.8" Color="Gray" />
         </VerticalStackLayout>
 
-
-        <Button Text="Save" Command="{Binding AddUpdateBorgarCommand}"/>
+        <Button Text="Guardar Hamburguesa" Command="{Binding AddUpdateBorgarCommand}"/>
     </StackLayout>
 </ContentPage>
