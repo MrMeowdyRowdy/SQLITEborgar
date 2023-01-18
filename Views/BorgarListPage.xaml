@@ -21,6 +21,7 @@
                                     <Label Text="{Binding DescripcionOD}" FontSize="18" FontAttributes="Bold" />
                                 </HorizontalStackLayout>
                                 <Label Text="{Binding ConQueso}" />
+                                <Label Text="{Binding Fecha}" />
                             </StackLayout>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewModels:BorgarListODModel}},Path=MostrarAccionCommand}"
